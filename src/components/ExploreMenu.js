@@ -29,9 +29,8 @@ const ExploreMenu = ({category, setCategory}) => {
         <div className='flex justify-between mt-5'>
             {menuData.map((item, index)=>{
                 return (
-                    <ScrollAnimation key={index} className='flex flex-col items-center cursor-pointer' onClick={()=>categoryHandler(item.menuName)} animateIn='bounce'
-                    initiallyVisible={true}
-                    animateOnce={true}>
+                    <ScrollAnimation key={index} className='flex flex-col items-center cursor-pointer' onClick={()=>categoryHandler(item.menuName)} animateIn='fadeIn'
+                    animateOut='fadeOut'>
                         <div className={category===item.menuName ? "w-[100px] h-[100px] rounded-full overflow-hidden transition-all border-[3px] border-[#FC8A06]" : "w-[100px] h-[100px] rounded-full overflow-hidden"}>
                             <img src={item.menuImg} className='w-[100%] h-[100%] object-cover'/>
                         </div>
