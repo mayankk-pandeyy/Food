@@ -45,7 +45,7 @@ const NavConAn6 = {
 }
 
 
-const Navbar = () => {
+const Navbar = ({setShowLogin}) => {
 
     const [activeMenu, setActiveMenu] = useState('Menu');
 
@@ -95,7 +95,7 @@ const Navbar = () => {
                     <FaShoppingCart className='scale-125 text-[#F58D1D] cursor-pointer'/>
                 </motion.div>
                 <div>
-                    <motion.button className="border border-[#F58D1D] rounded-3xl hover:text-[#121223] hover:bg-[#F58D1D] transition-colors duration-300 ease-in-out" initial="hidden" animate="visible" variants={NavConAn6} transition={{duration : 1.1}}>
+                    <motion.button className="border border-[#F58D1D] rounded-3xl hover:text-[#121223] hover:bg-[#F58D1D] transition-colors duration-300 ease-in-out" initial="hidden" animate="visible" variants={NavConAn6} transition={{duration : 1.1}} onClick={()=>setShowLogin(true)}>
                         <span className='px-5 py-2 inline-block transition-transform duration-300 ease-in-out transform hover:scale-125'>
                             Sign In
                         </span>
