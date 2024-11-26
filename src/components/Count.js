@@ -26,7 +26,7 @@ const Count = () => {
     ]
 
   return (
-    <div className='w-[90%] mx-auto flex flex-col gap-20 font-dm-sans'>
+    <div className='w-[90%] mx-auto flex flex-col gap-20 font-dm-sans mb-20'>
         <div className='flex w-[100%] px-16 bg-[#FC8A06] mx-auto py-4 justify-between rounded-xl'>
             {
                 count.map((item, index)=> {

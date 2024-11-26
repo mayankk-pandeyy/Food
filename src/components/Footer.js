@@ -1,6 +1,4 @@
 import React from 'react'
-import Count from './Count'
-import logo from "../assets/Logo.png"
 import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import { FaTwitter } from "react-icons/fa";
@@ -10,8 +8,8 @@ import { FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className='mt-20'>
-        <div className='bg-[#0D0D0D] w-[100%] py-36 font-dm-sans mt-20'>
+    <div className=''>
+        <div className='bg-[#0D0D0D] w-[100%] py-36 font-dm-sans'>
             <div className='flex justify-between w-[80%] mx-auto'>
                 {/* 1st Column */}
                 <div className='flex flex-col gap-5 w-[30%]'>

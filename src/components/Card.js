@@ -3,10 +3,11 @@ import cartDish from "../assets/cartDish.png"
 import addIcon from "../assets/addIcon.png"
 import removeIcon from "../assets/removeIcon.png"
 import { StoreContext } from '../context/StoreContext'
+import { Link } from 'react-router-dom'
 
 const Card = ({item}) => {
 
-    const {cartItems, addToCart, removeFromCart} = useContext(StoreContext);
+    const {cartItems, addToCart, removeFromCart, } = useContext(StoreContext);
 
     function addItemHandler(){
         addToCart(item._id);
@@ -17,7 +18,7 @@ const Card = ({item}) => {
     }
 
   return (
-    <div className='w-[20%] font-dm-sans rounded-2xl py-4 transition-all duration-700 ease-in-out shadow-xl hover:scale-110'>
+    <div className='w-[22%] font-dm-sans rounded-2xl py-4 transition-all duration-700 ease-in-out shadow-xl hover:scale-110'>
         {/* Img */}
         <div className='mx-auto'>
             <img src={item.image} className='object-center rounded-xl'/>
@@ -57,7 +58,9 @@ const Card = ({item}) => {
                         }
                     </div>
                     {/* Cart Icon */}
-                    <img src={cartDish} className='w-[25px] h-[25px]'/>
+                    <Link to="/cart">
+                        <img src={cartDish} className='w-[25px] h-[25px]'/>
+                    </Link>
                 </div>
             </div>
         </div>

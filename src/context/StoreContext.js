@@ -7,16 +7,20 @@ export const StoreContext = createContext(null);
 const StoreContextProvider = (props) => {
 
     const [cartItems, setCartItems] = useState({});
+    const [cartItemsCount, setCartItemsCount] = useState(0);
     const addToCart = (itemId) => {
         if(!cartItems[itemId]){
-            setCartItems((prev)=> ({...prev, [itemId]:1}))
+            setCartItems((prev)=> ({...prev, [itemId]:1}));
+            setCartItemsCount(cartItemsCount+1);
         }else{
             setCartItems((prev) => ({...prev, [itemId]: prev[itemId]+1}))
+            setCartItemsCount(cartItemsCount+1);
         }
     }
 
     const removeFromCart = (itemId) => {
         setCartItems((prev)=> ({...prev, [itemId]:prev[itemId]-1}));
+        setCartItemsCount(cartItemsCount-1);
     }
 
     useEffect(()=> {
@@ -28,7 +32,8 @@ const StoreContextProvider = (props) => {
         cartItems,
         setCartItems,
         addToCart,
-        removeFromCart
+        removeFromCart,
+        cartItemsCount
     }
 
     return (
